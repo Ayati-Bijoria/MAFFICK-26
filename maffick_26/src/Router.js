@@ -41,6 +41,8 @@ function Routing() {
                 <Flowchart />
                 <SC />
                 <br/>
+                <br/>
+                <p style={{"font-family":"Oswald","padding":"50px","font-size":"25pt"}}>OUR SPONSORS</p>
                 <Sponsorship />
                 <Footer />
               </>
