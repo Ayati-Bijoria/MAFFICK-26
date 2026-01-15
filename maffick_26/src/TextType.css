@@ -1,0 +1,36 @@
+.text-type {
+  display: inline-block;
+  white-space: pre-wrap;
+}
+
+.text-type__cursor {
+  margin-left: 0.25rem;
+  display: inline-block;
+  opacity: 1;
+}
+
+.text-type__cursor--hidden {
+  display: none;
+}
+
+/* Remove padding on mobile devices */
+@media (max-width: 768px) {
+  .text-type {
+    padding-left: 0;
+  }
+  
+  .text-type__cursor {
+    margin-left: 0.15rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .text-type {
+    padding-left: 0;
+    margin-left: 0;
+  }
+  
+  .text-type__cursor {
+    margin-left: 0.1rem;
+  }
+}

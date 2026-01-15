@@ -1,0 +1,19 @@
+.flip-container {
+    display: flex;
+    position:absolute;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Centers children horizontally */
+    min-height: 100vh; /* Full viewport height for vertical centering */
+    padding:20px;
+    left:5%;
+}
+
+.flip-row {
+    display: flex;
+    flex-direction: row; /* Horizontal layout for cards */
+    justify-content: center;
+    gap: 30px;
+    padding:20px;
+    flex-wrap: wrap; /* Responsive wrap on small screens */
+}

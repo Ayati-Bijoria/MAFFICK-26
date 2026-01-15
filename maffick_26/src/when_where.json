@@ -1,0 +1,647 @@
+{
+  day1:
+  [{
+    "date": "22-Jan",
+    "title": "Inauguration",
+    "description": "5PM-6PM at LRC Main Stage",
+    "icon": "🎉",
+    "time": "5PM-6PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Illuminati",
+    "description": "All day at LRC",
+    "icon": "💡",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Ascent",
+    "description": "All day at LRC",
+    "icon": "🚀",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Tower of Wealth, P&L Target, Rate Race, Asset Classes, Fintech Hackathon",
+    "description": "All day at LRC",
+    "icon": "💰",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Vizathon",
+    "description": "All day at Civil Audi",
+    "icon": "📊",
+    "time": "All day",
+    "venue": "Civil Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Cyber Hunter 2.O",
+    "description": "All day at LRC",
+    "icon": "🔐",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Project Exhibition",
+    "description": "All day at LRC",
+    "icon": "🖼️",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Manthan 1.0",
+    "description": "All day at New Lecture Theatre Hall",
+    "icon": "📚",
+    "time": "All day",
+    "venue": "New Lecture Theatre Hall"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Escape Room, Mini Games, Photobooth",
+    "description": "11AM-4PM at LRC",
+    "icon": "🎮",
+    "time": "11AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Kodachrome",
+    "description": "All day at Pixel room LRC",
+    "icon": "📸",
+    "time": "All day",
+    "venue": "Pixel room LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Iris (online)",
+    "description": "All day online",
+    "icon": "💻",
+    "time": "All day",
+    "venue": "Online"
+  },
+  {
+    "date": "22-Jan",
+    "title": "The Guestimation Games",
+    "description": "2PM-5PM at Mechanical Audi",
+    "icon": "🎯",
+    "time": "2PM-5PM",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Guest Lecture (Innofest)",
+    "description": "2PM-5PM at Electrical Audi",
+    "icon": "🎤",
+    "time": "2PM-5PM",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Gig-a-Night",
+    "description": "6PM-9PM at Main Stage",
+    "icon": "🎵",
+    "time": "6PM-9PM",
+    "venue": "Main Stage"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Echoes (Solo Songs)",
+    "description": "All day at MME Audi",
+    "icon": "🎤",
+    "time": "All day",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Step Solo (Solo Dance)",
+    "description": "All day at Civil",
+    "icon": "💃",
+    "time": "All day",
+    "venue": "Civil"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Tarang - The Nukkad Natak Competition",
+    "description": "10AM-2PM in front of LRC Building",
+    "icon": "🎭",
+    "time": "10AM-2PM",
+    "venue": "In front of LRC Building"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games and Activities",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Casecraft",
+    "description": "All day at Electrical Audi",
+    "icon": "🏗️",
+    "time": "All day",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Project Showcasing & Exhibition",
+    "description": "All day at LRC",
+    "icon": "🖼️",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games (Vision EE/ECE)",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Car Soccer",
+    "description": "All day at LRC",
+    "icon": "⚽",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Project Showcasing & Exhibition (Mech)",
+    "description": "All day at LRC",
+    "icon": "🖼️",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games (Vision CSE)",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "VR Show",
+    "description": "All day at LRC",
+    "icon": "🥽",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games (Vision Civil)",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Aavishkar",
+    "description": "All day at LRC",
+    "icon": "🚀",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Hackathon",
+    "description": "All day at Mechanical Audi",
+    "icon": "💻",
+    "time": "All day",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "VR Bharat Darshan",
+    "description": "All day at LRC ground floor",
+    "icon": "🇮🇳",
+    "time": "All day",
+    "venue": "LRC ground floor"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Smash Karts Tournament",
+    "description": "All day at LRC",
+    "icon": "🏎️",
+    "time": "All day",
+    "venue": "LRC"
+  }],
+  Day2:
+  [{
+    "date": "23-Jan",
+    "title": "Project Exhibition",
+    "description": "10AM-4PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Workshop on EV Chargers",
+    "description": "11AM-1PM at SAC",
+    "icon": "⚡",
+    "time": "11AM-1PM",
+    "venue": "SAC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Escape Room, Mini Games, Photobooth",
+    "description": "11AM-4PM at LRC",
+    "icon": "🎮",
+    "time": "11AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "INNOVATE X",
+    "description": "12PM-6PM at NTB 3-4 classrooms",
+    "icon": "🤖",
+    "time": "12PM-6PM",
+    "venue": "NTB 3-4 classrooms"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Student Project Contest",
+    "description": "All day at New Lecture Theatre Hall",
+    "icon": "🎓",
+    "time": "All day",
+    "venue": "New Lecture Theatre Hall"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Rhythm Riot (Beatboxing/Rap Battle)",
+    "description": "All day at MME Audi",
+    "icon": "🎤",
+    "time": "All day",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "IDDC- Groove Wars (Group Dance)",
+    "description": "All day at SAC",
+    "icon": "💃",
+    "time": "All day",
+    "venue": "SAC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Eyecandy Workshop",
+    "description": "4PM-6PM at Pixel room LRC",
+    "icon": "🎨",
+    "time": "4PM-6PM",
+    "venue": "Pixel room LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "DJ Night",
+    "description": "6PM-9PM at LRC Main Stage",
+    "icon": "🎧",
+    "time": "6PM-9PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Clash of Ideas (Debate)",
+    "description": "10AM-12:30PM at Civil Audi",
+    "icon": "💬",
+    "time": "10AM-12:30PM",
+    "venue": "Civil Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Drone Design Challenge",
+    "description": "All day at Mechanical Audi",
+    "icon": "🚁",
+    "time": "All day",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Guest Lecture",
+    "description": "All day at MME Audi",
+    "icon": "🎤",
+    "time": "All day",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Prodconclave",
+    "description": "All day at Electrical Audi",
+    "icon": "🎯",
+    "time": "All day",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games and Activities",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Project Showcasing & Exhibition (Vision EE/ECE)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games (Vision EE/ECE)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎮",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Project Showcasing & Exhibition (Vision Mech)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games (Vision CSE)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎮",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games (Vision Civil)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎮",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Tower of Wealth, P&L Target, Rate Race, Asset Classes, Fintech Hackathon",
+    "description": "10AM-5PM at LRC",
+    "icon": "💰",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Aavishkar",
+    "description": "10AM-5PM at LRC",
+    "icon": "🚀",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Smash Karts Tournament",
+    "description": "10AM-5PM at LRC",
+    "icon": "🏎️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Paper Clay Workshop",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎨",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Deshaj (Folk Dance)",
+    "description": "10AM-6PM at SAC",
+    "icon": "💃",
+    "time": "10AM-6PM",
+    "venue": "SAC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Art Gallery",
+    "description": "10AM-6PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-6PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "SKYCRAFT",
+    "description": "All day in front of LRC",
+    "icon": "🚀",
+    "time": "All day",
+    "venue": "In front of LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Robosoccer",
+    "description": "All day at LRC ground floor",
+    "icon": "⚽",
+    "time": "All day",
+    "venue": "LRC ground floor"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Arena Run",
+    "description": "All day at NTB (1 Room)",
+    "icon": "🏃",
+    "time": "All day",
+    "venue": "NTB (1 Room)"
+  }],
+  day3:
+  
+  [{
+    "date": "24-Jan",
+    "title": "Micromouse",
+    "description": "10AM-2PM at LRC ground floor",
+    "icon": "🐭",
+    "time": "10AM-2PM",
+    "venue": "LRC ground floor"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Escape Room, Mini Games, Photobooth",
+    "description": "11AM-4PM at LRC",
+    "icon": "🎮",
+    "time": "11AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Megatreopuz",
+    "description": "1PM-5PM at MME Audi",
+    "icon": "🧩",
+    "time": "1PM-5PM",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Once Upon a Mic (Open Mic)",
+    "description": "2PM-5PM at Civil Audi",
+    "icon": "🎤",
+    "time": "2PM-5PM",
+    "venue": "Civil Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Auto Expo",
+    "description": "4PM-7PM at MANIT Porch",
+    "icon": "🚗",
+    "time": "4PM-7PM",
+    "venue": "MANIT Porch"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Deshaj (Folk Dance) : Final Performance",
+    "description": "6PM-7:30PM at LRC Main Stage",
+    "icon": "💃",
+    "time": "6PM-7:30PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Artist Night (Naam Sujal)",
+    "description": "7:30PM-9PM at LRC Main Stage",
+    "icon": "🎨",
+    "time": "7:30PM-9PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Robowars",
+    "description": "9AM-3PM at LRC ground",
+    "icon": "🤖",
+    "time": "9AM-3PM",
+    "venue": "LRC ground"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Cinema Town Blender",
+    "description": "10AM-1PM at LRC Stage",
+    "icon": "🎬",
+    "time": "10AM-1PM",
+    "venue": "LRC Stage"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Photon Race",
+    "description": "10AM-2PM at Mechanical Audi",
+    "icon": "💡",
+    "time": "10AM-2PM",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Tower of Wealth, P&L Target, Rate Race, Asset Classes, Fintech Hackathon",
+    "description": "10AM-4PM at LRC",
+    "icon": "💰",
+    "time": "10AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Fintech Hackathon",
+    "description": "10AM-4PM at Electrical Audi",
+    "icon": "💻",
+    "time": "10AM-4PM",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Treasure Hunt",
+    "description": "All day at MANIT Campus",
+    "icon": "🗺️",
+    "time": "All day",
+    "venue": "MANIT Campus"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Smash Karts Tournament",
+    "description": "10AM-5PM at LRC",
+    "icon": "🏎️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Art Gallery",
+    "description": "10AM-5PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Water Roborace",
+    "description": "10AM-6PM at LRC Porch",
+    "icon": "🤖",
+    "time": "10AM-6PM",
+    "venue": "LRC Porch"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Project Exhibition",
+    "description": "10AM-6PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-6PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Battism",
+    "description": "10AM-6PM at LRC",
+    "icon": "⚔️",
+    "time": "10AM-6PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Robosoccer",
+    "description": "10AM-6PM at LRC ground floor",
+    "icon": "⚽",
+    "time": "10AM-6PM",
+    "venue": "LRC ground floor"
+  }],
+  Day4:
+  [{
+    "date": "25-Jan",
+    "title": "Save the Ocean",
+    "description": "11PM-3PM at LRC",
+    "icon": "🌊",
+    "time": "11PM-3PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "25-Jan",
+    "title": "Curtain Call & Prize Distribution",
+    "description": "5:30PM-7PM at LRC Main Stage",
+    "icon": "🏆",
+    "time": "5:30PM-7PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "25-Jan",
+    "title": "Artist Night",
+    "description": "7PM-9PM at LRC Main Stage",
+    "icon": "🎨",
+    "time": "7PM-9PM",
+    "venue": "LRC Main Stage"
+  }
+]}
