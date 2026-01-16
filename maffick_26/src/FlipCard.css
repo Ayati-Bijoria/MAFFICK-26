@@ -1,0 +1,60 @@
+.the-card {
+    position: relative;
+    width: 250px;
+    height: 320px;
+    top: 100px;
+    left: 100px;
+    background-color: magenta;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+    display: flex;
+    box-shadow: 2px 2px 4px #b0fffa;
+}
+
+.front {
+    position: absolute;
+    width: 250px;
+    height: 320px;
+    background-color: #16213e;
+    color: whitesmoke;
+    backface-visibility: hidden;
+    box-shadow: 2px 2px 4px #b0fffa;
+    /* Removed top/left - aligns to container */
+}
+
+.back {
+    position: absolute;
+    width: 250px;
+    height: 320px;
+    background-color: #1a1a2e;
+    color: wheat;
+    backface-visibility: hidden;
+    transform: rotateY(180deg);
+    box-shadow: 2px 2px 4px #b0fffa;
+    /* No top/left needed - defaults to 0,0 */
+}
+
+.the-card:hover {
+    transform: rotateY(180deg);
+}
+
+.flip-img{
+    width:250px;
+    height:250px;
+}
+.content-front
+{
+    padding:20px;
+    font-size:20pt;
+    font-weight: 700;
+    font-style: "Oswald";
+}
+.content-back
+{
+    padding:50px;
+    padding-top:100px;
+    text-align:center;
+    font-size:30pt;
+    font-weight: 700;
+    font-style: "Oswald";
+}

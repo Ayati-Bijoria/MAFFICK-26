@@ -1,0 +1,53 @@
+.m-container {
+    position: relative;
+    top: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 40px;                   /* Reduced vertical spacing for tighter layout [web:12] */
+    max-width: 700px;             /* Fits 3x200px + 2x20px gaps = 660px [web:11] */
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-bottom: 50px;          /* Extra bottom space */
+}
+
+.m-row {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.div-content {
+    width: 200px;
+    height: 250px;
+    background: rgba(0, 212, 255, 0.1);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    display: flex;
+    flex-direction: column;       /* Stack text vertically inside card [web:13] */
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    padding: 20px;                /* Internal padding for message */
+    box-sizing: border-box;
+}
+
+/* Responsive: 2 per row on tablets */
+@media (max-width: 768px) {
+    .e-container {
+        max-width: 500px;         /* 2x200px + 20px gap = 420px */
+        gap: 30px;
+    }
+}
+
+/* Responsive: 1 per row on mobile */
+@media (max-width: 480px) {
+    .div-content {
+        width: 100%;
+        max-width: 300px;
+    }
+}

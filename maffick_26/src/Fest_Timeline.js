@@ -1,0 +1,828 @@
+import React, { useState, useEffect, useRef } from 'react';
+import { Clock, MapPin, Users, Sparkles, Calendar } from 'lucide-react';
+
+const TimelineItem = ({ item, index, isVisible }) => {
+  const isLeft = index % 2 === 0;
+  
+  const Icon = ({ type }) => {
+    const icons = {
+      rocket: '🚀',
+      target: '🎯',
+      zap: '⚡',
+      trophy: '🏆',
+      star: '⭐',
+      calendar: '📅'
+    };
+    return <span style={{ fontSize: '24px' }}>{icons[type] || '📅'}</span>;
+  };
+
+  return (
+    <div className="relative mb-16">
+      <div className={`flex ${isLeft ? 'flex-row' : 'flex-row-reverse'} items-center gap-8`}>
+        {/* Content Card */}
+        <div className={`w-5/12 transition-all duration-700 ${isVisible ? 'opacity-100 translate-x-0' : `opacity-0 ${isLeft ? '-translate-x-20' : 'translate-x-20'}`}`}>
+          <div className="relative group">
+            <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-75 transition duration-500"></div>
+            <div className="relative bg-black/80 backdrop-blur-xl rounded-2xl p-6 border border-white/10 hover:border-white/30 transition-all duration-500">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-600 to-pink-600 rounded-xl flex items-center justify-center">
+                  <Icon type={item.icon} />
+                </div>
+                <span className="text-purple-300 font-semibold text-sm">{item.date}</span>
+              </div>
+              <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
+              <p className="text-gray-400 text-sm leading-relaxed whitespace-pre-line">{item.description}</p>
+            </div>
+          </div>
+        </div>
+
+        {/* Center Dot */}
+        <div className="relative flex items-center justify-center w-16 flex-shrink-0">
+          <div className="absolute h-full w-0.5 bg-gradient-to-b from-purple-500 to-pink-500"></div>
+          <div className={`relative w-6 h-6 bg-gradient-to-br from-purple-600 to-pink-600 rounded-full border-4 border-black transition-all duration-700 ${isVisible ? 'scale-100' : 'scale-0'}`}>
+            <div className="absolute inset-0 bg-purple-500 rounded-full animate-ping opacity-75"></div>
+          </div>
+        </div>
+
+        {/* Empty Space */}
+        <div className="w-5/12"></div>
+      </div>
+    </div>
+  );
+};
+
+export default function CombinedTimeline() {
+  const [selectedDay, setSelectedDay] = useState('day1');
+  const [visibleItems, setVisibleItems] = useState(new Set());
+  const itemRefs = useRef([]);
+
+  useEffect(() => {
+    const observers = itemRefs.current.map((ref, index) => {
+      if (!ref) return null;
+      
+      const observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) {
+            setVisibleItems(prev => new Set([...prev, index]));
+          }
+        },
+        { threshold: 0.2 }
+      );
+      
+      observer.observe(ref);
+      return observer;
+    });
+
+    return () => {
+      observers.forEach(observer => observer?.disconnect());
+    };
+  }, [selectedDay]);
+
+  const competitions = {
+  day1:
+  [{
+    "date": "22-Jan",
+    "title": "Inauguration",
+    "description": "5PM-6PM at LRC Main Stage",
+    "icon": "🎉",
+    "time": "5PM-6PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Illuminati",
+    "description": "All day at LRC",
+    "icon": "💡",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Ascent",
+    "description": "All day at LRC",
+    "icon": "🚀",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Tower of Wealth, P&L Target, Rate Race, Asset Classes, Fintech Hackathon",
+    "description": "All day at LRC",
+    "icon": "💰",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Vizathon",
+    "description": "All day at Civil Audi",
+    "icon": "📊",
+    "time": "All day",
+    "venue": "Civil Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Cyber Hunter 2.O",
+    "description": "All day at LRC",
+    "icon": "🔐",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Project Exhibition",
+    "description": "All day at LRC",
+    "icon": "🖼️",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Manthan 1.0",
+    "description": "All day at New Lecture Theatre Hall",
+    "icon": "📚",
+    "time": "All day",
+    "venue": "New Lecture Theatre Hall"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Escape Room, Mini Games, Photobooth",
+    "description": "11AM-4PM at LRC",
+    "icon": "🎮",
+    "time": "11AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Kodachrome",
+    "description": "All day at Pixel room LRC",
+    "icon": "📸",
+    "time": "All day",
+    "venue": "Pixel room LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Iris (online)",
+    "description": "All day online",
+    "icon": "💻",
+    "time": "All day",
+    "venue": "Online"
+  },
+  {
+    "date": "22-Jan",
+    "title": "The Guestimation Games",
+    "description": "2PM-5PM at Mechanical Audi",
+    "icon": "🎯",
+    "time": "2PM-5PM",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Guest Lecture (Innofest)",
+    "description": "2PM-5PM at Electrical Audi",
+    "icon": "🎤",
+    "time": "2PM-5PM",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Gig-a-Night",
+    "description": "6PM-9PM at Main Stage",
+    "icon": "🎵",
+    "time": "6PM-9PM",
+    "venue": "Main Stage"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Echoes (Solo Songs)",
+    "description": "All day at MME Audi",
+    "icon": "🎤",
+    "time": "All day",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Step Solo (Solo Dance)",
+    "description": "All day at Civil",
+    "icon": "💃",
+    "time": "All day",
+    "venue": "Civil"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Tarang - The Nukkad Natak Competition",
+    "description": "10AM-2PM in front of LRC Building",
+    "icon": "🎭",
+    "time": "10AM-2PM",
+    "venue": "In front of LRC Building"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games and Activities",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Casecraft",
+    "description": "All day at Electrical Audi",
+    "icon": "🏗️",
+    "time": "All day",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Project Showcasing & Exhibition",
+    "description": "All day at LRC",
+    "icon": "🖼️",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games (Vision EE/ECE)",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Car Soccer",
+    "description": "All day at LRC",
+    "icon": "⚽",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Project Showcasing & Exhibition (Mech)",
+    "description": "All day at LRC",
+    "icon": "🖼️",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games (Vision CSE)",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "VR Show",
+    "description": "All day at LRC",
+    "icon": "🥽",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Games (Vision Civil)",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Aavishkar",
+    "description": "All day at LRC",
+    "icon": "🚀",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Hackathon",
+    "description": "All day at Mechanical Audi",
+    "icon": "💻",
+    "time": "All day",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "22-Jan",
+    "title": "VR Bharat Darshan",
+    "description": "All day at LRC ground floor",
+    "icon": "🇮🇳",
+    "time": "All day",
+    "venue": "LRC ground floor"
+  },
+  {
+    "date": "22-Jan",
+    "title": "Smash Karts Tournament",
+    "description": "All day at LRC",
+    "icon": "🏎️",
+    "time": "All day",
+    "venue": "LRC"
+  }],
+  day2:
+  [{
+    "date": "23-Jan",
+    "title": "Project Exhibition",
+    "description": "10AM-4PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Workshop on EV Chargers",
+    "description": "11AM-1PM at SAC",
+    "icon": "⚡",
+    "time": "11AM-1PM",
+    "venue": "SAC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Escape Room, Mini Games, Photobooth",
+    "description": "11AM-4PM at LRC",
+    "icon": "🎮",
+    "time": "11AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "INNOVATE X",
+    "description": "12PM-6PM at NTB 3-4 classrooms",
+    "icon": "🤖",
+    "time": "12PM-6PM",
+    "venue": "NTB 3-4 classrooms"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Student Project Contest",
+    "description": "All day at New Lecture Theatre Hall",
+    "icon": "🎓",
+    "time": "All day",
+    "venue": "New Lecture Theatre Hall"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Rhythm Riot (Beatboxing/Rap Battle)",
+    "description": "All day at MME Audi",
+    "icon": "🎤",
+    "time": "All day",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "IDDC- Groove Wars (Group Dance)",
+    "description": "All day at SAC",
+    "icon": "💃",
+    "time": "All day",
+    "venue": "SAC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Eyecandy Workshop",
+    "description": "4PM-6PM at Pixel room LRC",
+    "icon": "🎨",
+    "time": "4PM-6PM",
+    "venue": "Pixel room LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "DJ Night",
+    "description": "6PM-9PM at LRC Main Stage",
+    "icon": "🎧",
+    "time": "6PM-9PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Clash of Ideas (Debate)",
+    "description": "10AM-12:30PM at Civil Audi",
+    "icon": "💬",
+    "time": "10AM-12:30PM",
+    "venue": "Civil Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Drone Design Challenge",
+    "description": "All day at Mechanical Audi",
+    "icon": "🚁",
+    "time": "All day",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Guest Lecture",
+    "description": "All day at MME Audi",
+    "icon": "🎤",
+    "time": "All day",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Prodconclave",
+    "description": "All day at Electrical Audi",
+    "icon": "🎯",
+    "time": "All day",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games and Activities",
+    "description": "All day at LRC",
+    "icon": "🎮",
+    "time": "All day",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Project Showcasing & Exhibition (Vision EE/ECE)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games (Vision EE/ECE)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎮",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Project Showcasing & Exhibition (Vision Mech)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games (Vision CSE)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎮",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Games (Vision Civil)",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎮",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Tower of Wealth, P&L Target, Rate Race, Asset Classes, Fintech Hackathon",
+    "description": "10AM-5PM at LRC",
+    "icon": "💰",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Aavishkar",
+    "description": "10AM-5PM at LRC",
+    "icon": "🚀",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Smash Karts Tournament",
+    "description": "10AM-5PM at LRC",
+    "icon": "🏎️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Paper Clay Workshop",
+    "description": "10AM-5PM at LRC",
+    "icon": "🎨",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Deshaj (Folk Dance)",
+    "description": "10AM-6PM at SAC",
+    "icon": "💃",
+    "time": "10AM-6PM",
+    "venue": "SAC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Art Gallery",
+    "description": "10AM-6PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-6PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "SKYCRAFT",
+    "description": "All day in front of LRC",
+    "icon": "🚀",
+    "time": "All day",
+    "venue": "In front of LRC"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Robosoccer",
+    "description": "All day at LRC ground floor",
+    "icon": "⚽",
+    "time": "All day",
+    "venue": "LRC ground floor"
+  },
+  {
+    "date": "23-Jan",
+    "title": "Arena Run",
+    "description": "All day at NTB (1 Room)",
+    "icon": "🏃",
+    "time": "All day",
+    "venue": "NTB (1 Room)"
+  }],
+  day3:
+  
+  [{
+    "date": "24-Jan",
+    "title": "Micromouse",
+    "description": "10AM-2PM at LRC ground floor",
+    "icon": "🐭",
+    "time": "10AM-2PM",
+    "venue": "LRC ground floor"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Escape Room, Mini Games, Photobooth",
+    "description": "11AM-4PM at LRC",
+    "icon": "🎮",
+    "time": "11AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Megatreopuz",
+    "description": "1PM-5PM at MME Audi",
+    "icon": "🧩",
+    "time": "1PM-5PM",
+    "venue": "MME Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Once Upon a Mic (Open Mic)",
+    "description": "2PM-5PM at Civil Audi",
+    "icon": "🎤",
+    "time": "2PM-5PM",
+    "venue": "Civil Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Auto Expo",
+    "description": "4PM-7PM at MANIT Porch",
+    "icon": "🚗",
+    "time": "4PM-7PM",
+    "venue": "MANIT Porch"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Deshaj (Folk Dance) : Final Performance",
+    "description": "6PM-7:30PM at LRC Main Stage",
+    "icon": "💃",
+    "time": "6PM-7:30PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Artist Night (Naam Sujal)",
+    "description": "7:30PM-9PM at LRC Main Stage",
+    "icon": "🎨",
+    "time": "7:30PM-9PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Robowars",
+    "description": "9AM-3PM at LRC ground",
+    "icon": "🤖",
+    "time": "9AM-3PM",
+    "venue": "LRC ground"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Cinema Town Blender",
+    "description": "10AM-1PM at LRC Stage",
+    "icon": "🎬",
+    "time": "10AM-1PM",
+    "venue": "LRC Stage"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Photon Race",
+    "description": "10AM-2PM at Mechanical Audi",
+    "icon": "💡",
+    "time": "10AM-2PM",
+    "venue": "Mechanical Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Tower of Wealth, P&L Target, Rate Race, Asset Classes, Fintech Hackathon",
+    "description": "10AM-4PM at LRC",
+    "icon": "💰",
+    "time": "10AM-4PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Fintech Hackathon",
+    "description": "10AM-4PM at Electrical Audi",
+    "icon": "💻",
+    "time": "10AM-4PM",
+    "venue": "Electrical Audi"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Treasure Hunt",
+    "description": "All day at MANIT Campus",
+    "icon": "🗺️",
+    "time": "All day",
+    "venue": "MANIT Campus"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Smash Karts Tournament",
+    "description": "10AM-5PM at LRC",
+    "icon": "🏎️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Art Gallery",
+    "description": "10AM-5PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-5PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Water Roborace",
+    "description": "10AM-6PM at LRC Porch",
+    "icon": "🤖",
+    "time": "10AM-6PM",
+    "venue": "LRC Porch"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Project Exhibition",
+    "description": "10AM-6PM at LRC",
+    "icon": "🖼️",
+    "time": "10AM-6PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Battism",
+    "description": "10AM-6PM at LRC",
+    "icon": "⚔️",
+    "time": "10AM-6PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "24-Jan",
+    "title": "Robosoccer",
+    "description": "10AM-6PM at LRC ground floor",
+    "icon": "⚽",
+    "time": "10AM-6PM",
+    "venue": "LRC ground floor"
+  }],
+  day4:
+  [{
+    "date": "25-Jan",
+    "title": "Save the Ocean",
+    "description": "11PM-3PM at LRC",
+    "icon": "🌊",
+    "time": "11PM-3PM",
+    "venue": "LRC"
+  },
+  {
+    "date": "25-Jan",
+    "title": "Curtain Call & Prize Distribution",
+    "description": "5:30PM-7PM at LRC Main Stage",
+    "icon": "🏆",
+    "time": "5:30PM-7PM",
+    "venue": "LRC Main Stage"
+  },
+  {
+    "date": "25-Jan",
+    "title": "Artist Night",
+    "description": "7PM-9PM at LRC Main Stage",
+    "icon": "🎨",
+    "time": "7PM-9PM",
+    "venue": "LRC Main Stage"
+  }
+]};
+
+
+  const days = [
+    { id: 'day1', label: 'Day 1', date: '22 JAN' },
+    { id: 'day2', label: 'Day 2', date: '23 JAN' },
+    { id: 'day3', label: 'Day 3', date: '24 JAN' },
+    { id: 'day4', label: 'Day 4', date: '25 JAN' }
+  ];
+
+  return (
+    <div className="min-h-screen bg-black relative overflow-hidden">
+      {/* Background */}
+      <div className="absolute inset-0 bg-gradient-to-br from-purple-950/50 via-black to-blue-950/50"></div>
+      
+      {/* Grid Pattern */}
+      <div className="absolute inset-0" style={{
+        backgroundImage: `linear-gradient(rgba(139, 92, 246, 0.1) 1px, transparent 1px),
+                          linear-gradient(90deg, rgba(139, 92, 246, 0.1) 1px, transparent 1px)`,
+        backgroundSize: '50px 50px'
+      }}></div>
+
+      {/* Glow Effects */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-purple-600/20 rounded-full blur-3xl animate-pulse"></div>
+      <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-600/20 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+
+      <div className="relative z-10 max-w-6xl mx-auto p-8">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-6">
+            <div className="flex items-center gap-3 bg-gradient-to-r from-purple-600 to-pink-600 px-6 py-2 rounded-full">
+              <Sparkles className="w-5 h-5 text-white" />
+              <span className="text-white font-semibold text-sm tracking-wider">TECHFEST 2025</span>
+            </div>
+          </div>
+          <h1 className="text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-purple-400 via-pink-400 to-blue-400 mb-4">
+            Event Timeline
+          </h1>
+          <p className="text-xl text-gray-400 font-light">Select a day to view events</p>
+        </div>
+
+        {/* Day Selector */}
+        <div className="flex justify-center gap-4 mb-20">
+          {days.map((day) => (
+            <button
+              key={day.id}
+              onClick={() => {
+                setSelectedDay(day.id);
+                setVisibleItems(new Set());
+              }}
+              className={`group relative px-8 py-4 rounded-2xl font-bold transition-all duration-500 ${
+                selectedDay === day.id ? 'scale-110' : 'scale-100 hover:scale-105'
+              }`}
+            >
+              {selectedDay === day.id && (
+                <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600"></div>
+              )}
+              {selectedDay !== day.id && (
+                <div className="absolute inset-0 bg-white/5 backdrop-blur-sm border border-white/10"></div>
+              )}
+              <div className="relative z-10">
+                <div className={`text-sm mb-1 ${selectedDay === day.id ? 'text-purple-200' : 'text-gray-500'}`}>
+                  {day.label}
+                </div>
+                <div className={`text-lg ${selectedDay === day.id ? 'text-white' : 'text-gray-300'}`}>
+                  {day.date}
+                </div>
+              </div>
+              {selectedDay === day.id && (
+                <div className="absolute inset-0 shadow-2xl shadow-purple-500/50 rounded-2xl"></div>
+              )}
+            </button>
+          ))}
+        </div>
+
+        {/* Timeline Flowchart */}
+        <div className="relative py-12">
+          {competitions[selectedDay].map((item, index) => (
+            <div
+              key={index}
+              ref={el => itemRefs.current[index] = el}
+            >
+              <TimelineItem 
+                item={item} 
+                index={index} 
+                isVisible={visibleItems.has(index)}
+              />
+            </div>
+          ))}
+        </div>
+
+        {/* Footer */}
+        <div className="mt-20 text-center">
+          <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-purple-600/20 to-pink-600/20 backdrop-blur-lg rounded-full border border-purple-500/30">
+            <Calendar className="w-5 h-5 text-purple-400" />
+            <span className="text-purple-200 font-medium">Register at the fest registration desk</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+}
