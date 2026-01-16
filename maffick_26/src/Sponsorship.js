@@ -24,7 +24,7 @@ import mlh from "./img/MLH.png";
 import uber from "./img/Uber.png";
 import unstop from "./img/Unstop.png";
 import lost from "./img/LostStories.png";
-import hp from "./img/Guvi.png";
+import hp from "./img/HP.png";
 import civil from "./img/CivilServices.png";
 import amul from "./img/Amul.png";
 

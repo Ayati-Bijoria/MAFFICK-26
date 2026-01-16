@@ -57,7 +57,7 @@
 }
 
 .pc-card {
-  width: 300px;          /* CONTROL SIZE HERE */
+  width: 200px;          /* CONTROL SIZE HERE */
   height: 300px;         /* CONTROL SIZE HERE */
   aspect-ratio: auto;    /* STOP FORCING RESIZE */
   display: grid;

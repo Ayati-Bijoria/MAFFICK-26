@@ -1,117 +1,66 @@
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    padding: 0;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    background: linear-gradient(135deg, #0f0f23 0%, #1a1a2e 50%, #16213e 100%);
-    color: white;
-    overflow-x: hidden;
-}
-
 .pfp-container {
-    position: relative;
-    top: 100px;
-    left: 40%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 50px;
-    /* Reduced vertical spacing for tighter layout [web:12] */
-    max-width: 900px;
-    /* Fits 3x200px + 2x20px gaps = 660px [web:11] */
-    padding: 10px 20px;
-    box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 80px);
+  padding: clamp(12px, 2.5vw, 24px); /* Slightly tighter padding */
+  width: 100%;
+  max-width: 2000px; /* Extended for ultra-wide + generous gaps */
+  margin: 0 auto;
+  gap: clamp(20px, 3.5vw, 35px); /* Optimized vertical spacing */
 }
-
-/* Reset and base styles */
-
-
-
-
-/* Main container - centers everything vertically */
-
-/* Card row - exactly 3 cards per row on desktop */
-.pfp-row {
-    display: flex;
-    flex-direction: row;
-    gap: 20px;
-    justify-content: center;
-    flex-wrap: wrap;
-    /* Fits 3 cards perfectly */
-}
-
-
-
-/* Responsive breakpoints */
-
-@media (max-width: 768px) {
-    .pfp-container {
-        min-height: 100vh;
-        padding: 15px;
-        gap: 25px;
-    }
-
-    .pfp-row {
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-    }
-
-    .pfp-card-wrapper {
-        flex: none;
-        max-width: 100%;
-        min-height: 300px;
-    }
-}
-
-@media (max-width: 480px) {
-    .pfp-container {
-        padding: 10px;
-    }
-
-    .pfp-row {
-        gap: 15px;
-    }
-}
-
-/* Hover effects for the row */
-.pfp-row:hover .pfp-card-wrapper {
-    transform: translateY(-4px);
-    transition: transform 0.3s ease;
-}
-
-/* Ensure ProfileCard fits perfectly */
-/* Offset for navbar space */
-
 
 .pfp-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: left;
-    align-items: center;
-    /* Vertical center alignment */
-    gap: 300px;
-    /* Responsive gap */
+  display: grid;
+  grid-template-columns: repeat(5, 1fr); /* Locked 5 columns */
+  gap: clamp(12px, 2.5vw, 28px); /* Fine-tuned horizontal gaps */
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
+}
+
+/* ProfileCard compatibility - unchanged */
+.pfp-card-wrapper {
+  width: 100%;
+  height: 100%;
+}
+
+.pfp-card-wrapper .pc-card {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  aspect-ratio: unset !important;
+}
+
+/* Responsive - 5 columns until true tablet */
+@media (max-width: 1279px) { /* Earlier fallback for 5→4 */
+  .pfp-row {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 1023px) {
+  .pfp-row {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 767px) {
+  .pfp-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+  
+  .pfp-container {
+    min-height: calc(100vh - 70px);
     padding: 10px;
-    flex-wrap: wrap;
-    width: 100%;
-    max-width: 1200px;
-    /* Prevents row from stretching too wide */
+  }
 }
 
-@media (max-width: 768px) {
-    .pfp-container {
-        min-height: calc(100vh - 70px);
-        top: 70px;
-        padding: 10px;
-    }
-
-    .pfp-row {
-        flex-direction: column;
-        gap: 20px;
-        max-width: 100%;
-    }
+@media (max-width: 479px) {
+  .pfp-row {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
 }

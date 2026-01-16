@@ -12,7 +12,6 @@ import Sponsor from './Sponsor';
 import Footer from './Footer';
 import Maff from "./maff";
 import SC from './SC';
-import HT from './HorizontalTimeline.js';
 import "./SlideShow.css";
 import TextType from "./TextType";
 import DomeGallery from "./DomeGallery";
