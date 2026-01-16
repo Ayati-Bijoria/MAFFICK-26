@@ -2,22 +2,36 @@ import React from 'react';
 import CompetitionCardsDemo from "./TeamCard"; // Fixed import
 import fest from "./img/fest.png";
 import deshaj from './img/deshaj.jpeg';
+import spardha from './img/SPARDHA.jpeg';
+import echo from './img/Echos.jpeg';
+import clashofideas from './img/clashofideas.jpeg';
+import electrical from './img/Electrical.jpeg';
+import onceuponamic from './img/onceuponamic.jpeg';
+import iddc from './img/IDDC.jpeg'
+import robofiesta from './img/RoboFiesta.jpeg';
+import drone from './img/Drone.jpeg';
+import photon from './img/photonRace.jpeg';
+import waterrobo from './img/WaterRobo.jpeg';
+import battism from './img/Battism.jpeg';
+
 
 function App() {
   // Fixed: Use array of competition arrays, not object with duplicate keys
   const competitions = [
-    ["Debate", fest, "Organizer A", "10:00 AM", "Main Hall","https://www.google.com/"],
-    ["Music", fest, "Organizer B", "2:00 PM", "Auditorium","https://www.google.com/"],
-    ["Dance", deshaj, "Organizer C", "4:00 PM", "Stage Area","https://www.google.com/"],
-    ["Quiz", fest, "Organizer D", "6:00 PM", "Lecture Hall","https://www.google.com/"],
-    ["Art", fest, "Organizer E", "10:00 AM", "Gallery","https://www.google.com/"],
-    ["Tech", fest, "Organizer F", "12:00 PM", "Lab 101","https://www.google.com/"],
-    ["Sports", fest, "Organizer G", "3:00 PM", "Sports Complex","https://www.google.com/"],
-    ["Drama", fest, "Organizer H", "7:00 PM", "Theatre","https://www.google.com/"],
-    ["Coding", fest, "Organizer I", "9:00 AM", "Computer Lab","https://www.google.com/"],
-    ["Design", fest, "Organizer J", "1:00 PM", "Design Studio","https://www.google.com/"],
-    ["Poetry", fest, "Organizer K", "5:00 PM", "Library","https://www.google.com/"],
-    ["Theatre", fest, "Organizer L", "8:00 PM", "Main Theatre","https://www.google.com/"]
+    ["PRODCONCLAVE-\nSPARDHA 1.0 ", spardha, "Organizer ProdCON", "22 Jan", "to be disclosed soon","https://unstop.com/competitions/prodconclave--1623629"],
+    ["ECHOS", echo, "Organizer Student Council", "23 Jan\n10 am-1 pm", "MME AUDI","https://www.google.com/"],
+    ["DESHAJ 1.0", deshaj, "Organizer Student Council", "24 Jan\n10 am-5 pm", "SAC","https://www.google.com/"],
+    ["IDDC GROOVE WARS", iddc, "Organizer Student Council", "23 Jan\n2 pm-5 pm", "SAc","https://www.google.com/"],
+    ["ONCE UPON A MIC", onceuponamic, "Organizer Student Council", "24 Jan\n 2pm-5 pm", "Gallery","https://www.google.com/"],
+    ["RHYTHM RIOT", echo, "Organizer Student Council", "23 Jan\n2 pm-5 pm", "MME AUDI","https://www.google.com/"],
+    ["CLASH OF IDEAS", clashofideas, "Organizer DebSoc", "24 Jan\n 10 am -12:30 pm", "SAC","https://www.google.com/"],
+    ["PROJECT SHOWCASE COMPETITION ", electrical, "Organizer electrical dept", "22-23 Jan", "LRC","https://www.google.com/"],
+    ["BATTISM", battism, "Organizer EVOLVE", "24 Jan", "venue to be disclosed soon","https://www.google.com/"],
+    ["STEP SOLO", iddc, "Organizer Student Council", "23 Jan\n10 am-1 pm", "CIVIL AUDI","https://www.google.com/"],
+    ["KSHITIJ 4.0: DRONE DESIGN", drone, "Organizer Astro Alliance", "24 Jan", "Venue to be disclosed sooon","https://www.google.com/"],
+    ["KHITIJ 4.0: PHOTON RACE", photon, "Organizer Astro Alliance", "25 Jan\n", "Venue to be anounced soon","https://www.google.com/"],
+    ["ROBOFIESTA", robofiesta, "Organizer Robotics club", "22-25 Jan", " Manit,Bhopal","https://www.google.com/"],
+    ["WATER ROBO RACE", waterrobo, "Organizer EVOLVE", "25 Jan", " venue to be disclosed soon","https://www.google.com/"]
   ];
 
   return (
